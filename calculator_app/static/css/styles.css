@@ -1,0 +1,24 @@
+.background-dark {
+    background-color: #242424
+}
+
+.font-alegreya {
+    font-family: 'Alegreya', serif;
+    font-size: xx-large;
+}
+
+.font-averia {
+    font-family: 'Averia Serif Libre', cursive;
+}
+
+.border-bottom-blue {
+    border-bottom: solid #007bff;
+}
+
+.highlight-none {
+    user-select: none;
+}
+
+.link-underline-none {
+    text-decoration: none !important;
+}
