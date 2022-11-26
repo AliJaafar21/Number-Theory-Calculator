@@ -11,6 +11,11 @@
     font-family: 'Averia Serif Libre', cursive;
 }
 
+.font-poppins {
+    font-family: 'Poppins', sans-serif;
+    font-size: xxx-large;
+}
+
 .border-bottom-blue {
     border-bottom: solid #007bff;
 }

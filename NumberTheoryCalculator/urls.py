@@ -15,8 +15,9 @@ Including another URLconf
 """
 
 from django.urls import path
-from calculator_app.views import HomePageView
+from calculator_app.views import HomePageView, PrimeFactorizationView
 
 urlpatterns = [
-    path("", HomePageView),
+    path('', HomePageView),
+    path('prime-factorization', PrimeFactorizationView)
 ]

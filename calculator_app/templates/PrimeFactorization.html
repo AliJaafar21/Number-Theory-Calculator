@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+    <div class="d-flex flex-column align-items-center">
+        <h1 class="text-center text-light highlight-none font-averia mt-5">Prime Factorization</h1>
+        <form class="d-flex flex-column flex-lg-row align-items-center my-5 w-50" method="POST" action="/prime-factorization">
+          {% csrf_token %}
+          <input type="number" min="0" step="1" oninput="validity.valid||(value='');" name="number" class="form-control m-1" placeholder="Enter an natural number to get its prime factors.">
+          <button class="btn btn-primary m-1" type="submit">Go</button>
+        </form>
+    </div>
+
+    {% if factors %}
+    <div class="d-flex flex-lg-row flex-column justify-content-center align-items-center font-poppins text-light">
+        <span class="mx-1"> {{ number }} </span>
+        <span class="mx-1"> = </span>
+        {% for key, value in factors.items %}
+            {% if value == 1 %}
+            <span class="mx-1"> {{ key }} </span>
+            {% else %}
+             <span class="mx-1"> {{ key }} <sup> {{ value }} </sup> </span>
+            {% endif %}
+            {% if not forloop.last %}
+               <span class="mx-1"> &times; </span>
+            {% endif %}
+        {% endfor %}
+    </div>
+    {% endif %}
+
+{% endblock %}
