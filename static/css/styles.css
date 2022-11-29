@@ -27,3 +27,12 @@
 .link-underline-none {
     text-decoration: none !important;
 }
+
+.crt {
+    width: 50vw;
+    height: 15vh;
+}
+
+.crt-paragraph {
+    font-size: xx-large;
+}
