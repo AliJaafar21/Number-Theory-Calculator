@@ -15,10 +15,14 @@ Including another URLconf
 """
 
 from django.urls import path
-from calculator_app.views import HomePageView, PrimeFactorizationView, ChineseRemainderTheoremView
+from calculator_app.views import (
+    HomePageView, PrimeFactorizationView, ChineseRemainderTheoremView,
+    FastExponentiationView
+)
 
 urlpatterns = [
     path('', HomePageView),
     path('prime-factorization', PrimeFactorizationView),
-    path('chinese-remainder-theorem', ChineseRemainderTheoremView)
+    path('chinese-remainder-theorem', ChineseRemainderTheoremView),
+    path('fast-exponentiation', FastExponentiationView)
 ]

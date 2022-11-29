@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from utilities.PrimeFactorization import PrimeFactorization
 from utilities.ChineseRemainderTheorem import chineseRemainderTheoremScenario1, chineseRemainderTheoremScenario2
+from utilities.FastExponentiation import FastExponentiation
 
 def HomePageView(request):
     return render(request, 'index.html')
@@ -18,6 +19,7 @@ def PrimeFactorizationView(request):
         return render(request, 'PrimeFactorization.html', {'number': number, 'factors': factors})
 
     return render(request, 'PrimeFactorization.html')
+
 
 def ChineseRemainderTheoremView(request):
     if request.method == 'POST':
@@ -60,5 +62,13 @@ def ChineseRemainderTheoremView(request):
     return render(request, 'ChineseRemainderTheorem.html')
 
 
+def FastExponentiationView(request):
 
-    
+    if request.method == 'POST':
+        a = int(request.POST.get('a'))
+        b = int(request.POST.get('b'))
+        n = int(request.POST.get('n'))
+        result = FastExponentiation(a, b, n)
+        return render(request, 'FastExponentiation.html', {'a': a, 'b': b, 'n': n, 'result': result})
+
+    return render(request, 'FastExponentiation.html')
