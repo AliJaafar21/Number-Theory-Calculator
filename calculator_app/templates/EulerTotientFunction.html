@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+    <div class="d-flex flex-column align-items-center">
+        <h1 class="text-center text-light highlight-none font-averia mt-5">Euler Totient Function</h1>
+        <p class="text-center text-light highlight-none font-averia font-xx-large mt-5"> Calculates <i> Φ(n) of an integer n </i> </p>
+        <form class="d-flex flex-column flex-lg-row align-items-center my-5 w-50" method="POST" action="/euler-totient">
+            {% csrf_token %}
+            <input type="text" name="number" required pattern="[0-9]+" class="form-control m-1" placeholder="Enter an integer n to get its euler function value.">
+            <button class="btn btn-primary m-1" type="submit">Go</button>
+        </form>
+    </div>
+
+    {% if phi is not None %}
+    <div class="d-flex flex-lg-row flex-column justify-content-center align-items-center font-poppins text-light">
+        <span class="mx-1"> Φ( </span>
+        <span class="mx-1"> {{ number }} </span>
+        <span class="mx-1"> ) </span>
+        <span class="mx-1"> = </span>
+        <span class="mx-1"> {{ phi }} </span>
+    {% endif %}
+
+{% endblock %}

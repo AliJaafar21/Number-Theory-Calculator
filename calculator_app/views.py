@@ -2,6 +2,7 @@ from django.shortcuts import render
 from utilities.PrimeFactorization import PrimeFactorization
 from utilities.ChineseRemainderTheorem import chineseRemainderTheoremScenario1, chineseRemainderTheoremScenario2
 from utilities.FastExponentiation import FastExponentiation
+from utilities.EulerTotientFunction import phi
 
 def HomePageView(request):
     return render(request, 'index.html')
@@ -72,3 +73,14 @@ def FastExponentiationView(request):
         return render(request, 'FastExponentiation.html', {'a': a, 'b': b, 'n': n, 'result': result})
 
     return render(request, 'FastExponentiation.html')
+
+
+def EulerTotientFunctionView(request):
+    if request.method == 'POST':
+        number = request.POST.get('number')
+
+        number = int(number)
+        result = phi(number)
+        return render(request, 'EulerTotientFunction.html', {'number': number, 'phi': result})
+
+    return render(request, 'EulerTotientFunction.html')
