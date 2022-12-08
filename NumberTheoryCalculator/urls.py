@@ -17,7 +17,7 @@ Including another URLconf
 from django.urls import path
 from calculator_app.views import (
     HomePageView, PrimeFactorizationView, ChineseRemainderTheoremView,
-    FastExponentiationView,EulerTotientFunctionView
+    FastExponentiationView,EulerTotientFunctionView, MillerRabinView
 )
 
 urlpatterns = [
@@ -25,5 +25,6 @@ urlpatterns = [
     path('prime-factorization', PrimeFactorizationView),
     path('chinese-remainder-theorem', ChineseRemainderTheoremView),
     path('fast-exponentiation', FastExponentiationView),
+    path('miller-rabin', MillerRabinView),
     path('euler-totient', EulerTotientFunctionView)
 ]
