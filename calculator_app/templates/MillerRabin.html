@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="d-flex flex-column align-items-center">
+    <h1 class="text-center text-light highlight-none font-averia mt-5">Miller Rabin</h1>
+    <p class="text-center text-light highlight-none font-averia font-xx-large mt-5"> Checks primality of given n.</p>
+    <form class="d-flex flex-column flex-md-row flex-lg-row flex-xl-row align-items-center w-25" method="POST" action="/miller-rabin">
+        {% csrf_token %}
+        <input type="text" name="n" required pattern="[0-9]+" class="form-control m-1" placeholder="n">
+        <button class="btn btn-primary m-2" type="submit">Go</button>
+    </form>
+</div>
+
+    {% if result is not None %}
+    <div class="d-flex flex-column align-items-center">
+        {% if result == True %}
+        <span class="font-averia font-xx-large text-light text-center my-5">{{ n }} is a prime or pseudoprime.</span>
+        {% else %}
+        <span class="font-averia font-xx-large text-light text-center my-5">{{ n }} is composite.</span>
+        {% endif %}
+    </div>
+    {% endif %}
+
+{% endblock %}

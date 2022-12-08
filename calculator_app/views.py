@@ -2,6 +2,7 @@ from django.shortcuts import render
 from utilities.PrimeFactorization import PrimeFactorization
 from utilities.ChineseRemainderTheorem import chineseRemainderTheoremScenario1, chineseRemainderTheoremScenario2
 from utilities.FastExponentiation import FastExponentiation
+from utilities.MillerRabinAlgorithm import findIntegers, MillerRabin
 
 def HomePageView(request):
     return render(request, 'index.html')
@@ -72,3 +73,13 @@ def FastExponentiationView(request):
         return render(request, 'FastExponentiation.html', {'a': a, 'b': b, 'n': n, 'result': result})
 
     return render(request, 'FastExponentiation.html')
+
+
+def MillerRabinView(request):
+
+    if request.method == 'POST':
+        n = int(request.POST.get('n'))
+        result = MillerRabin(n)
+        return render(request, 'MillerRabin.html', {'n': n, 'result': result})
+
+    return render(request, 'MillerRabin.html')
