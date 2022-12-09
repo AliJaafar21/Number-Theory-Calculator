@@ -1,7 +1,7 @@
 # [Number-Theory-Calculator](https://numbertheorycalculator.pythonanywhere.com/)
 
 ## About
-### A Calculator that implements the following Number Theory Functions: 
+ A Website that implements the following Number Theory Functions: 
   * [Prime Factorization](utilities/PrimeFactorization.py)
   * [Euler’s Totient Function](utilities/EulerTotientFunction.py)
   * [Miller-Rabin Primality Algorithm](utilities/MillerRabinAlgorithm.py)
@@ -21,4 +21,4 @@
   * Bootstrap
   
 ## Deployment
-### Deployed on PythonAnywhere at this [link](https://numbertheorycalculator.pythonanywhere.com/)
+ Deployed on PythonAnywhere at this [link](https://numbertheorycalculator.pythonanywhere.com/).
