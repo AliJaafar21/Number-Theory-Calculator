@@ -11,12 +11,7 @@ def HomePageView(request):
 
 def PrimeFactorizationView(request):
     if request.method == 'POST':
-        number = request.POST.get('number')
-
-        if number == "":
-            return render(request, 'PrimeFactorization.html')
-
-        number = int(number)
+        number = int(request.POST.get('number'))
         factors = PrimeFactorization(number)
         return render(request, 'PrimeFactorization.html', {'number': number, 'factors': factors})
 
