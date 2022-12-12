@@ -1,4 +1,3 @@
-
 def chineseRemainderTheoremScenario1(m, A):
     a = []
 
@@ -12,9 +11,6 @@ def chineseRemainderTheoremScenario2(m, a):
 
     if (len(m) != len(a)):
         return "Mismatched list lengths"
-    
-    print(m)
-    print(a)
 
     M = 1
     for i in range(len(m)):

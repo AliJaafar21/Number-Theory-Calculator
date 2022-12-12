@@ -14,7 +14,11 @@
         </form>
     </div>
 
-    {% if result is not None %}
+    {% if error is not None %}
+        <div class="d-flex flex-lg-row flex-column justify-content-center align-items-center font-poppins text-light m-5">
+            {{ error }}
+        </div>
+    {% elif result is not None %}
         <div class="d-flex flex-column align-items-center">
             <span class="font-averia font-xx-large text-light text-center my-5"> {{ a }}<sup>{{ b }}</sup> mod {{ n }} = {{ result }}</span>
         </div>

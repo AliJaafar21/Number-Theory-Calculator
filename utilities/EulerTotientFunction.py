@@ -1,4 +1,3 @@
-
 # Euler Totient Function
 def phi(n):
     

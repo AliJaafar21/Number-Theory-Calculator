@@ -11,21 +11,25 @@
         </form>
     </div>
 
-    {% if factors %}
-    <div class="d-flex flex-lg-row flex-column justify-content-center align-items-center font-poppins text-light">
-        <span class="mx-1"> {{ number }} </span>
-        <span class="mx-1"> = </span>
-        {% for key, value in factors.items %}
-            {% if value == 1 %}
-            <span class="mx-1"> {{ key }} </span>
-            {% else %}
-             <span class="mx-1"> {{ key }} <sup> {{ value }} </sup> </span>
-            {% endif %}
-            {% if not forloop.last %}
-               <span class="mx-1"> &times; </span>
-            {% endif %}
-        {% endfor %}
-    </div>
+    {% if error is not None %}
+        <div class="d-flex flex-lg-row flex-column justify-content-center align-items-center font-poppins text-light m-5">
+            {{ error }}
+        </div>
+    {% elif factors %}
+        <div class="d-flex flex-lg-row flex-column justify-content-center align-items-center font-poppins text-light">
+            <span class="mx-1"> {{ number }} </span>
+            <span class="mx-1"> = </span>
+            {% for key, value in factors.items %}
+                {% if value == 1 %}
+                <span class="mx-1"> {{ key }} </span>
+                {% else %}
+                <span class="mx-1"> {{ key }} <sup> {{ value }} </sup> </span>
+                {% endif %}
+                {% if not forloop.last %}
+                <span class="mx-1"> &times; </span>
+                {% endif %}
+            {% endfor %}
+        </div>
     {% endif %}
 
 {% endblock %}

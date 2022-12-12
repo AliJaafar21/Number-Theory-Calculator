@@ -12,13 +12,18 @@
         </form>
     </div>
 
-    {% if phi is not None %}
-    <div class="d-flex flex-lg-row flex-column justify-content-center align-items-center font-poppins text-light">
-        <span class="mx-1"> Φ( </span>
-        <span class="mx-1"> {{ number }} </span>
-        <span class="mx-1"> ) </span>
-        <span class="mx-1"> = </span>
-        <span class="mx-1"> {{ phi }} </span>
+    {% if error is not None %}
+        <div class="d-flex flex-lg-row flex-column justify-content-center align-items-center font-poppins text-light m-5">
+            {{ error }}
+        </div>    
+    {% elif phi is not None %}
+        <div class="d-flex flex-lg-row flex-column justify-content-center align-items-center font-poppins text-light">
+            <span class="mx-1"> Φ( </span>
+            <span class="mx-1"> {{ number }} </span>
+            <span class="mx-1"> ) </span>
+            <span class="mx-1"> = </span>
+            <span class="mx-1"> {{ phi }} </span>
+        </div>
     {% endif %}
 
 {% endblock %}
